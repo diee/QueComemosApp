@@ -8,6 +8,8 @@ import { AuthData } from '../../providers/auth-data';
 import { Signup } from '../signup/signup';
 import { HomePage } from '../home/home';
 import { ResetPassword } from '../reset-password/reset-password';
+import { TabsPage } from '../tabs/tabs';
+
 
 @Component({
   selector: 'page-login',
@@ -57,7 +59,7 @@ export class Login {
       console.log(this.loginForm.value);
     } else {
       this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then( authData => {
-        this.nav.setRoot(HomePage);
+        this.nav.setRoot(TabsPage);
       }, error => {
         this.loading.dismiss().then( () => {
           let alert = this.alertCtrl.create({

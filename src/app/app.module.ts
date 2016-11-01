@@ -9,6 +9,9 @@ import { Login } from '../pages/login/login';
 import { Profile } from '../pages/profile/profile';
 import { ResetPassword } from '../pages/reset-password/reset-password';
 import { Signup } from '../pages/signup/signup';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 // Import providers
@@ -26,7 +29,10 @@ import { ProfileData } from '../providers/profile-data';
     Login,
     Profile,
     ResetPassword,
-    Signup
+    Signup,
+    AboutPage,
+    ContactPage,
+    TabsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -41,7 +47,10 @@ import { ProfileData } from '../providers/profile-data';
     Login,
     Profile,
     ResetPassword,
-    Signup
+    Signup,
+    AboutPage,
+    ContactPage,
+    TabsPage
   ],
   providers: [
   AuthData]

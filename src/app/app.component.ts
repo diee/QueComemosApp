@@ -5,6 +5,7 @@ import firebase from 'firebase';
 import { HomePage } from '../pages/home/home';
 
 import { Login } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 
@@ -12,7 +13,7 @@ import { Login } from '../pages/login/login';
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
 
   constructor(platform: Platform) {
 
