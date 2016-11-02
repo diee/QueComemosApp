@@ -1,15 +1,133 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Comidas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  We'll be testing the log out button.
-
   <button ion-button color="positive" block (click)="logMeOut()">
-    Log Me Out Please
+    Log Out
   </button>
+  <button (click)="goToProfile()"><ion-icon name="person"></ion-icon></button>
+
+  <ion-list>
+    <ion-list-header>
+      Comidas
+    </ion-list-header>
+
+    <!--<ion-item>
+      <ion-label>Pollo al horno con papas</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Milanesas con pure</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Arroz con pollo</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pastel de papas</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Empanadas de carne</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ensalada de fideos</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tarta de Atun</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fideos con salsa</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>-->
+
+    <ion-list>
+    <ion-item *ngFor="let item of items" (click)="itemClicked($event,item)">
+      <ion-avatar item-left>
+        <img src="{{item.picture.thumbnail}}">
+      </ion-avatar>
+ 
+      <h2>{{item.name.first | uppercase }}</h2>
+      <!--<h3>{{item.gender}}</h3>
+ 
+      <ion-icon *ngIf="item.gender=='female'" name="woman" item-left></ion-icon>
+      <ion-icon *ngIf="item.gender=='male'" name="man" item-left></ion-icon>
+ 
+      <ion-icon name="heart" item-right></ion-icon>
+      <button ion-button item-right color="danger" (click)="buttonClick($event)">Button</button>-->
+ 
+    </ion-item>
+ 
+  </ion-list>
+
+    <!--<ion-item>
+      <ion-label>Jon Snow</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Daenerys Targaryen</ion-label>
+      <ion-checkbox color="dark" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Arya Stark</ion-label>
+      <ion-checkbox value="cherry" disabled="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tyrion Lannister</ion-label>
+      <ion-checkbox color="secondary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Sansa Stark</ion-label>
+      <ion-checkbox color="danger" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Khal Drogo</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cersei Lannister</ion-label>
+      <ion-checkbox color="energized" checked="true" color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Stannis Baratheon</ion-label>
+      <ion-checkbox color="royal" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Petyr Baelish</ion-label>
+      <ion-checkbox disabled="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hodor</ion-label>
+      <ion-checkbox color="dark" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Catelyn Stark</ion-label>
+      <ion-checkbox color="secondary" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bronn</ion-label>
+      <ion-checkbox color="royal"></ion-checkbox>
+    </ion-item>-->
+
+  </ion-list>
 </ion-content>

@@ -10,7 +10,7 @@ import { Profile } from '../pages/profile/profile';
 import { ResetPassword } from '../pages/reset-password/reset-password';
 import { Signup } from '../pages/signup/signup';
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { IngredientesPage } from '../pages/ingredientes/ingredientes';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -31,7 +31,7 @@ import { ProfileData } from '../providers/profile-data';
     ResetPassword,
     Signup,
     AboutPage,
-    ContactPage,
+    IngredientesPage,
     TabsPage
   ],
   imports: [
@@ -49,10 +49,11 @@ import { ProfileData } from '../providers/profile-data';
     ResetPassword,
     Signup,
     AboutPage,
-    ContactPage,
+    IngredientesPage,
     TabsPage
   ],
   providers: [
+  ProfileData,
   AuthData]
 })
 export class AppModule {}
