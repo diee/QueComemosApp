@@ -31,6 +31,12 @@ export class Profile {
 	}
 
 	updateName(){
+		var comidas: { name: string, ingredientes: string }[] = [
+		    { "name": "Pollo al horno con papas", "ingredientes": "Pollo, Papas" },
+		    { "name": "Milanesas con pure","ingredientes": "Milanesas, Pure"  },
+		    { "name": "Tarta de Atun","ingredientes": "Tapa tarta, Atun" },
+		    { "name": "Pastel de papas","ingredientes": "Tapa tarta, pure, carne picada, morron, cebolla" }
+		];
 	  let alert = this.alertCtrl.create({
 	    message: "Your first name & last name",
 	    inputs: [
@@ -52,7 +58,7 @@ export class Profile {
 	      {
 	        text: 'Save',
 	        handler: data => {
-	          this.profileData.updateName(data.firstName, data.lastName);
+	          this.profileData.updateName(data.firstName, data.lastName, comidas);
 	        }
 	      }
 	    ]
