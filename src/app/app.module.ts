@@ -12,6 +12,7 @@ import { Signup } from '../pages/signup/signup';
 import { AboutPage } from '../pages/about/about';
 import { IngredientesPage } from '../pages/ingredientes/ingredientes';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Comida } from '../pages/comida/comida';
 
 
 // Import providers
@@ -32,7 +33,8 @@ import { ProfileData } from '../providers/profile-data';
     Signup,
     AboutPage,
     IngredientesPage,
-    TabsPage
+    TabsPage,
+    Comida
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -50,7 +52,8 @@ import { ProfileData } from '../providers/profile-data';
     Signup,
     AboutPage,
     IngredientesPage,
-    TabsPage
+    TabsPage,
+    Comida
   ],
   providers: [
   ProfileData,

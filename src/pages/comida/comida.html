@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Comida
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="profile">
+  <ion-list>
+    <ion-list-header>
+      Nombre de Comida
+    </ion-list-header>
+
+    <ion-item (click)="updateNameComida()">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngIf="parameter1?.name">
+            {{parameter1?.name}}
+          </ion-col>
+          <ion-col class="placeholder-profile" *ngIf="!parameter1?.name">
+            <span>
+              Nombre de comida.
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="dob-label">Ingredientes</ion-label>
+    </ion-item>
+
+    <ion-item (click)="updateIngredientes()">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngIf="parameter1?.ingredientes">
+              <ion-list>
+                <ion-item *ngFor="let ingrediente of parameter1.ingredientes">
+                  <ion-label>{{ingrediente.name | uppercase }}</ion-label>
+                </ion-item>
+              </ion-list>
+          </ion-col>
+          <ion-col class="placeholder-profile" *ngIf="!parameter1?.ingredientes">
+            <span>
+              Ingredientes.
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

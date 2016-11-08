@@ -36,7 +36,8 @@ export class ProfileData {
   * and we'll use it to get the user profile info in our page.
   */
   getUserProfile(): any {
-    return this.userProfile.child(this.currentUser.uid);
+    //return this.userProfile.child(this.currentUser.uid);
+    return this.userProfile.child("xV8TXKfvA9Un0JtdaOG0GrmDimd2");
   }
 
   /**
@@ -44,14 +45,19 @@ export class ProfileData {
   * for the current user as the firstName & lastName properties.
   */
   updateName(firstName: string, lastName: string, comidas): any {
-    return this.userProfile.child(this.currentUser.uid).update({
+    return this.userProfile.child("xV8TXKfvA9Un0JtdaOG0GrmDimd2").update({
       firstName: firstName,
       lastName: lastName,
       //comidas: "Pollo al horno con papas",
-      comidas: comidas,
+      //comidas: comidas,
     });
   }
 
+  updateNameComida(nameComida: string, index: string): any {
+    return this.userProfile.child("xV8TXKfvA9Un0JtdaOG0GrmDimd2").child("comidas").child(index).update({
+      name: nameComida,
+    });
+  }
   /**
   * Pretty much the same as before, just that instead of saving the name it's saving the date of birth
   */
