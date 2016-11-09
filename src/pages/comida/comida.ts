@@ -13,6 +13,7 @@ public parameter1:any;
 public parameter2:any;
 public parameter3:any;
 public parameterIngrediente: any;
+public parameterNewIngredienteName: any;
   constructor(public navCtrl: NavController, public profileData: ProfileData, private navParams: NavParams, private alertCtrl: AlertController) {
   		this.parameter1 = navParams.get('param1');
   		this.parameter2 = navParams.get('param2');
@@ -50,8 +51,28 @@ public parameterIngrediente: any;
   alert.present();
 }
 
- updateIngredientes(){
-  console.log(this.parameterIngrediente);
+ borrarIngrediente(ingrediente){
+  let alert = this.alertCtrl.create({
+    message: "Nuevo Ingrediente",
+    inputs: [
+      {
+        name: 'ingredienteName',
+        placeholder: 'Papas'
+      },
+    ],
+    buttons: [
+      {
+        text: 'Cancel',
+      },
+      {
+        text: 'Save',
+        handler: data => {
+          //this.profileData.updateNameComida(data.comidaName, this.parameter2);
+        }
+      }
+    ]
+  });
+  alert.present();
 }
 
 }

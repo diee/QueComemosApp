@@ -31,23 +31,18 @@
       <ion-label class="dob-label">Ingredientes</ion-label>
     </ion-item>
 
-    <ion-item (click)="updateIngredientes()">
-      <ion-grid>
-        <ion-row>
-          <ion-col *ngIf="parameter1?.ingredientes">
-              <ion-list>
-                <ion-item *ngFor="let ingrediente of parameter1.ingredientes">
-                  <ion-label>{{ingrediente.name | uppercase }}</ion-label>
-                </ion-item>
-              </ion-list>
-          </ion-col>
-          <ion-col class="placeholder-profile" *ngIf="!parameter1?.ingredientes">
-            <span>
-              Ingredientes.
-            </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+  <ion-list>
+  <ion-item-sliding *ngFor="let ingrediente of parameter1.ingredientes">
+    <ion-item >
+      <ion-label>{{ingrediente.name}}</ion-label>
+      <ion-checkbox checked="true" disabled="true"></ion-checkbox>
     </ion-item>
+    <ion-item-options side="left">
+      <button ion-button color="danger" (click)="borrarIngrediente(ingrediente)">Borrar</button>
+    </ion-item-options>
+  </ion-item-sliding>
+  <button (click)="borrarIngrediente()"><ion-icon name="nutrition">Nuevo ingrediente</ion-icon></button>
+</ion-list>
+
   </ion-list>
 </ion-content>
